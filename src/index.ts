@@ -2,7 +2,9 @@ import { EstoqueVeiculos } from "./classes/EstoqueVeiculos";
 import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
+import { Veiculo } from "./interface/Veiculo";
 import { VeiculoEstoque } from "./interface/VeiculoEstoque";
+import { FiltroVeiculos } from "./utils/FiltroVeiculos";
 // import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 
 const accord: Carro = {
@@ -83,6 +85,22 @@ listaDeEstoqueMotos.push(africaTwinEstoque);
 const estoqueMotos = new EstoqueVeiculos<Moto>(listaDeEstoqueMotos);
 estoqueMotos.adicionarEstoque(tiger900Estoque);
 estoqueMotos.removerEstoque("Africa Twin");
+
+
+// Exercício 3
+let listaDeVeiculos: Veiculo[] = []
+listaDeVeiculos.push(africaTwin);
+listaDeVeiculos.push(camry);
+listaDeVeiculos.push(accord);
+listaDeVeiculos.push(tiger900);
+
+const filtroVeiculos = new FiltroVeiculos();
+
+const listaDeVeiculosFabricadosEm2025: Veiculo[] = filtroVeiculos.filtrarPorAno(listaDeVeiculos, 2025);
+console.log(listaDeVeiculosFabricadosEm2025);
+
+const listaDeVeiculosHonda: Veiculo[] = filtroVeiculos.filtrarPorMarca(listaDeVeiculos, "Honda");
+console.log(listaDeVeiculosHonda);
 
 
 
