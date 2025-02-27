@@ -5,6 +5,7 @@ import { Moto } from "./interface/Moto";
 import { Veiculo } from "./interface/Veiculo";
 import { VeiculoEstoque } from "./interface/VeiculoEstoque";
 import { FiltroVeiculos } from "./utils/FiltroVeiculos";
+import { RelatorioVeiculos } from "./utils/RelatorioVeiculos";
 // import { GerenciadorVeiculos } from "./classes/GerenciadorVeiculos";
 
 const accord: Carro = {
@@ -102,6 +103,11 @@ console.log(listaDeVeiculosFabricadosEm2025);
 const listaDeVeiculosHonda: Veiculo[] = filtroVeiculos.filtrarPorMarca(listaDeVeiculos, "Honda");
 console.log(listaDeVeiculosHonda);
 
+
+// Exercício 4
+const relatorioVeiculos = new RelatorioVeiculos();
+const stringDeRelatorioVeiculos = relatorioVeiculos.gerarRelatorio(listaDeVeiculos);
+console.log(stringDeRelatorioVeiculos);
 
 
 
