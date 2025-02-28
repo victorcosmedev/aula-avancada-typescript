@@ -9,14 +9,25 @@ export class EstoqueVeiculos<T> {
     }
 
     adicionarEstoque(veiculoEstoque: VeiculoEstoque){
-        this.estoque.push(veiculoEstoque);
+        const veiculoExistente = this.estoque.find(veiculo => veiculo.modelo == veiculoEstoque.modelo);
+
+        if(veiculoExistente){
+            veiculoExistente.quantidade += veiculoEstoque.quantidade;
+        } else {
+            this.estoque.push(veiculoEstoque);
+        }
     }
 
     removerEstoque(modelo: string): void {
         const indexVeiculo = this.estoque.findIndex((item: VeiculoEstoque) => item.modelo === modelo);
         if (indexVeiculo !== -1) {
-            this.estoque.splice(indexVeiculo, 1);
-            console.log(`Veículo modelo ${modelo} removido do estoque.`);
+            const veiculo = this.estoque[indexVeiculo];
+            veiculo.quantidade -= 1;
+            if (veiculo.quantidade <= 0) {
+                this.estoque.splice(indexVeiculo, 1);
+            } else {
+                this.estoque[indexVeiculo] = veiculo;
+            }
         } else {
             console.log(`Veículo modelo ${modelo} não encontrado para remoção.`);
         }

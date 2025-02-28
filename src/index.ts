@@ -47,14 +47,14 @@ listaDeCarros.push(accord);
 listaDeCarros.push(camry);
 const gerenciadorDeCarros = new GerenciadorVeiculos<Carro>(listaDeCarros);
 gerenciadorDeCarros.remover(camry);
-// gerenciadorDeCarros.exibirListaDeVeiculos();
+console.log(gerenciadorDeCarros.exibirListaDeVeiculos());
 
 let listaDeMotos: Moto[] = [];
 listaDeMotos.push(africaTwin);
 listaDeMotos.push(tiger900);
 const gerenciadorDeMotos = new GerenciadorVeiculos<Moto>(listaDeMotos);
 gerenciadorDeMotos.remover(africaTwin);
-// gerenciadorDeMotos.exibirListaDeVeiculos();
+console.log(gerenciadorDeMotos.exibirListaDeVeiculos());
 
 // EXERCÍCIO 2
 let corollaEstoque: VeiculoEstoque = {

@@ -1,5 +1,7 @@
-export class GerenciadorVeiculos<T> {
-    listaDeVeiculos: T[];
+import { Veiculo } from "../interface/Veiculo";
+
+export class GerenciadorVeiculos<T extends Veiculo> {
+    private listaDeVeiculos: T[];
 
     constructor(listaDeVeiculos: T[]){
         this.listaDeVeiculos = listaDeVeiculos;
@@ -13,7 +15,7 @@ export class GerenciadorVeiculos<T> {
         this.listaDeVeiculos = this.listaDeVeiculos.filter(item => item != veiculo);
     }
 
-    exibirListaDeVeiculos(): void {
-        console.log(this.listaDeVeiculos);
+    exibirListaDeVeiculos(): T[] {
+        return this.listaDeVeiculos;
     }
 }
