@@ -15,7 +15,7 @@ export class GerenciadorVeiculos<T extends Veiculo> {
         this.listaDeVeiculos = this.listaDeVeiculos.filter(item => item != veiculo);
     }
 
-    exibirListaDeVeiculos(): T[] {
+    listarVeiculos(): T[] {
         return this.listaDeVeiculos;
     }
 }

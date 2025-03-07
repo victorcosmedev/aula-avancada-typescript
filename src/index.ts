@@ -41,20 +41,20 @@ const tiger900: Moto = {
 }
 
 
-// EXERCICIO 1s
+// EXERCICIO 1
 let listaDeCarros: Carro[] = [];
 listaDeCarros.push(accord);
 listaDeCarros.push(camry);
 const gerenciadorDeCarros = new GerenciadorVeiculos<Carro>(listaDeCarros);
 gerenciadorDeCarros.remover(camry);
-console.log(gerenciadorDeCarros.exibirListaDeVeiculos());
+console.log(gerenciadorDeCarros.listarVeiculos());
 
 let listaDeMotos: Moto[] = [];
 listaDeMotos.push(africaTwin);
 listaDeMotos.push(tiger900);
 const gerenciadorDeMotos = new GerenciadorVeiculos<Moto>(listaDeMotos);
 gerenciadorDeMotos.remover(africaTwin);
-console.log(gerenciadorDeMotos.exibirListaDeVeiculos());
+console.log(gerenciadorDeMotos.listarVeiculos());
 
 // EXERCÍCIO 2
 let corollaEstoque: VeiculoEstoque = {
