@@ -33,14 +33,14 @@ export class EstoqueVeiculos<T> {
         }
     }
 
-    consultarEstoque(modelo: string): void{
+    consultarEstoque(modelo: string): number{
         const veiculoEstoque: VeiculoEstoque = this.estoque.find((item: VeiculoEstoque) => item.modelo == modelo);
 
         if(veiculoEstoque){
-            console.log(`A quantidade do veículo ${modelo} no estoque é de ${veiculoEstoque.quantidade}`);
-        } else {
-            console.log(`Veículo modelo ${modelo} não encontrado.`);
+            return veiculoEstoque.quantidade
         }
+
+        return 0;
     }
 
 }

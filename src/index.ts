@@ -69,7 +69,8 @@ let listaDeEstoqueCarros: VeiculoEstoque[] = [];
 listaDeEstoqueCarros.push(corollaEstoque);
 const estoqueCarros = new EstoqueVeiculos<Carro>(listaDeEstoqueCarros);
 estoqueCarros.adicionarEstoque(civicEstoque);
-estoqueCarros.removerEstoque("Corolla")
+estoqueCarros.removerEstoque("Corolla");
+console.log("Unidades de Corolla após remoção: ", estoqueCarros.consultarEstoque("Corolla"));
 
 
 let africaTwinEstoque: VeiculoEstoque = {
@@ -86,6 +87,8 @@ listaDeEstoqueMotos.push(africaTwinEstoque);
 const estoqueMotos = new EstoqueVeiculos<Moto>(listaDeEstoqueMotos);
 estoqueMotos.adicionarEstoque(tiger900Estoque);
 estoqueMotos.removerEstoque("Africa Twin");
+console.log("Unidades de Africa Twin após remoção: ", estoqueCarros.consultarEstoque("Africa Twin"));
+
 
 
 // Exercício 3
