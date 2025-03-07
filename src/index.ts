@@ -106,6 +106,9 @@ console.log(listaDeVeiculosFabricadosEm2025);
 const listaDeVeiculosHonda: Veiculo[] = filtroVeiculos.filtrarPorMarca(listaDeVeiculos, "Honda");
 console.log(listaDeVeiculosHonda);
 
+const listaDeCamrys: Veiculo[] = filtroVeiculos.filtrarPorModelo(listaDeVeiculos, "Camry");
+console.log(listaDeCamrys);
+
 
 // Exercício 4
 const relatorioVeiculos = new RelatorioVeiculos();

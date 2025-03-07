@@ -11,4 +11,8 @@ export class FiltroVeiculos {
     filtrarPorMarca(veiculos: Veiculo[], marca: string): Veiculo[]{
         return veiculos.filter(veiculo => veiculo.marca == marca);
     }
+
+    filtrarPorModelo(veiculos: Veiculo[], modelo: string): Veiculo[] {
+        return veiculos.filter(veiculo => veiculo.modelo == modelo);
+    }
 }
